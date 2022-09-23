@@ -12,9 +12,12 @@ from django.urls import path, include
 
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),  # для проверки и тестирования наших api через web-интерфейс
+    path('admin/', admin.site.urls),
+    path('real_estate/', include('real_estate_app.urls')),
+    path('company_data/', include('company_data_app.urls')),
 ] + i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
     path('real_estate/', include('real_estate_app.urls')),
     path('company_data/', include('company_data_app.urls')),
 )

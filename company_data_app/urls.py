@@ -7,7 +7,7 @@ urlpatterns = [
     path('employee', EmployeeViewSet.as_view({'get': 'list'}), name='Сотрудники'),
     path('service', ServiceViewSet.as_view({'get': 'list'}), name='Услуги'),
     path('news', NewsReviewViewSet.as_view({'get': 'list'}), name='Новости'),
-    path('review', CompanyReviewViewSet.as_view({'get': 'list', 'post': 'create'}), name='Отзывы'),
+    path('review/', CompanyReviewViewSet.as_view({'get': 'list', 'post': 'create'}), name='Отзывы'),
     path('review/<int:pk>', CompanyReviewViewSet.as_view(
         {
             'get': 'retrieve',
